@@ -1,0 +1,64 @@
+blocks:
+  - ==: org.bukkit.inventory.ItemStack
+    v: 4189
+    type: BROWN_MUSHROOM_BLOCK
+    meta:
+      ==: ItemMeta
+      meta-type: UNSPECIFIC
+      display-name: '{"text":"Golddurchzogener Spiralschwarzstein","italic":false,"color":"blue"}'
+      custom-model-data:
+        ==: CustomModelData
+        floats:
+          - 15.0
+        flags: []
+        strings: []
+        colors: []
+      BlockStateTag:
+        east: 'true'
+        south: 'true'
+        north: 'false'
+        west: 'true'
+        up: 'true'
+        down: 'false'
+  - ==: org.bukkit.inventory.ItemStack
+    v: 4189
+    type: BROWN_MUSHROOM_BLOCK
+    meta:
+      ==: ItemMeta
+      meta-type: UNSPECIFIC
+      display-name: '{"text":"Goldverzierte Schwarzeichenbretter","italic":false,"color":"blue"}'
+      custom-model-data:
+        ==: CustomModelData
+        floats:
+          - 17.0
+        flags: [ ]
+        strings: [ ]
+        colors: [ ]
+      BlockStateTag:
+        east: 'true'
+        south: 'false'
+        north: 'true'
+        west: 'true'
+        up: 'false'
+        down: 'false'
+  - ==: org.bukkit.inventory.ItemStack
+    v: 4189
+    type: BROWN_MUSHROOM_BLOCK
+    meta:
+      ==: ItemMeta
+      meta-type: UNSPECIFIC
+      display-name: '{"text":"Portalblock (Rosa)","italic":false,"color":"blue"}'
+      custom-model-data:
+        ==: CustomModelData
+        floats:
+          - 22.0
+        flags: [ ]
+        strings: [ ]
+        colors: [ ]
+      BlockStateTag:
+        east: 'true'
+        south: 'true'
+        north: 'true'
+        west: 'true'
+        up: 'true'
+        down: 'false'
