@@ -54,15 +54,31 @@
                                 <mkdir dir="${server.dir}/plugins" />
 
                                 <!-- Move plugin file to Plugins folder -->
-                                <move file="${project.build.directory}/${project.build.finalName}.jar"
+                                <copy file="${project.build.directory}/${project.build.finalName}.jar"
                                       todir="${server.dir}/plugins" />
 
                                 <!-- Create Plugin-specific folder if nonexistent -->
                                 <mkdir dir="${server.dir}/plugins/${project.artifactId}" />
 
                                 <!-- Move config file to Plugin-specific folder -->
-                                <move file="${project.build.directory}/classes/config.yml"
+                                <copy file="${project.build.directory}/classes/config.yml"
                                       todir="${server.dir}/plugins/${project.artifactId}" />
+
+
+
+                                <!-- Create Repo-build folder if nonexistent -->
+                                <mkdir dir="${project.basedir}/build" />
+
+                                <!-- Move plugin file to Repo-build folder -->
+                                <copy file="${project.build.directory}/${project.build.finalName}.jar"
+                                      todir="${project.basedir}/build" />
+
+                                <!-- Create Plugin-specific folder if nonexistent -->
+                                <mkdir dir="${project.basedir}/build/${project.artifactId}" />
+
+                                <!-- Move config file to Plugin-specific folder -->
+                                <copy file="${project.build.directory}/classes/config.yml"
+                                      todir="${project.basedir}/build/${project.artifactId}" />
 
                             </target>
                         </configuration>
