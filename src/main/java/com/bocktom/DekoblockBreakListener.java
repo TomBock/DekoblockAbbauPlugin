@@ -26,15 +26,21 @@ public class DekoblockBreakListener implements Listener {
 	}
 
 	private void loadMaterials() {
+
+		int count = 0;
 		var serializedItems = plugin.config.getList("blocks");
 		if(serializedItems != null) {
 			for(var serializedItem : serializedItems) {
 				if(serializedItem instanceof ItemStack item)
+				{
 					materialQuickLookup.add(item.getType());
+					count++;
+				}
 			}
 		} else {
 			plugin.log.warning("Blocks could not be loaded. This plugin will not work.");
 		}
+		plugin.log.info("Successfully initialized " + count + " Dekoblocks.");
 	}
 
 	@EventHandler
@@ -45,7 +51,6 @@ public class DekoblockBreakListener implements Listener {
 
 		// 1. Check; Silk-touch
 		if(tool.containsEnchantment(Enchantment.SILK_TOUCH)) {
-			player.sendMessage("You broke a " + event.getBlock() + " with Silk Touch!");
 
 			// 2. Check; Material
 			if(materialQuickLookup.contains(event.getBlock().getType())) {
@@ -55,8 +60,6 @@ public class DekoblockBreakListener implements Listener {
 				if(item != null) {
 					event.setDropItems(false);
 					event.getBlock().getWorld().dropItemNaturally(event.getBlock().getLocation().add(0.5, 0.5, 0.5), item);
-
-					player.sendMessage("You got a " + item);
 				}
 			}
 		}
