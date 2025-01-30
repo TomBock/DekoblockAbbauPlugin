@@ -45,6 +45,10 @@ public class DekoblockBreakListener implements Listener {
 
 	@EventHandler
 	public void onBlockBreak(BlockBreakEvent event) {
+		// MCMMo throws a new event, we want the original thrown by sigot
+		if(event.getClass() != BlockBreakEvent.class)
+			return;
+
 		Player player = event.getPlayer();
 
 		ItemStack tool = player.getInventory().getItemInMainHand();
