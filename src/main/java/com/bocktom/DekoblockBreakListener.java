@@ -49,6 +49,10 @@ public class DekoblockBreakListener implements Listener {
 		if(event.getClass() != BlockBreakEvent.class)
 			return;
 
+		// If the event is cancelled, we don't want to do anything
+		if(event.isCancelled())
+			return;
+
 		Player player = event.getPlayer();
 
 		ItemStack tool = player.getInventory().getItemInMainHand();
